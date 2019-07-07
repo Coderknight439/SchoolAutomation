@@ -1,0 +1,154 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body{font-family: 'Poppins', sans-serif;
+     background: aliceblue;
+     height: 100%
+     }
+a,
+a:hover,
+a:focus{
+	color: inherit;
+	text-decoration: none;
+	transition: all 0.3s;
+}
+
+.navbar{
+	padding: 15px 10px;
+	background: #35475e;
+	border: none;
+	border-radius: 0;
+	margin-bottom: 40px;
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    height: 1000px;
+}
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #35475e;
+    color: #fff;
+    transition: all 0.3s;
+}
+#sidebar.active{
+	margin-left: -250px;
+}
+
+#sidebar .sidebar-header{
+	padding: 20px;
+	background: #35475e;
+}
+#sidebar ul.components{
+	padding: 20px 0px;
+	border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul li {
+	padding: 10px;
+	font-size: 1.1em;
+	display: block;
+	margin-left: 8px;
+}
+
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #35475e;
+}
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #35475e;
+}
+header{
+	background:#35475e;
+	margin-bottom: 0px;
+	padding-bottom: 6px;
+}
+header h1{
+color: #fff;
+}
+footer{
+	background-color:aliceblue;
+	padding-top: 0px;
+	bottom:0;
+	clear: both;
+}
+footer p{
+margin-top:30px;
+margin-left: 20px;
+	text-align: center;
+}
+.footer1{
+background:#35475e;
+}
+.approve1
+{
+font-size: 14px;
+	color: #fff;
+	font-weight: 400;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	background: #35475e;
+	padding: 10px 22px;
+	border: 2px solid #ff4fa1;
+	margin-left: 0px;
+}
+.approve1:hover{
+color: #000;
+background: #fff;
+}
+.approve-btn{
+margin-left:40px;
+float:right;
+}
+.add-std{
+font-size: 10px;
+	color: white;
+	font-weight: 300;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	background: #35475e;
+	padding: 6px 16px;
+	border: 2px solid #ff4fa1;
+	margin-left: 70px;
+}
+.add-std:hover{
+color: #000;
+background: #fff;
+}
+.testtable
+{
+  background-color:white;
+  color: red;
+}
+.testtable td{
+  text-align: center;
+  font-weight: bold;
+}
+caption {
+  background-color: red;
+  color: yellow;
+  font-weight: bold;
+  text-align:center;
+  caption-side:top;
+}
+@media(maz-width:768px){
+	#sidebar{margin-left: -250px;}
+	#sidebar.active{
+		margin-left: 0px;
+	}
+	#sidebarCollapse span{
+		display: none;
+	}
+}

@@ -1,0 +1,43 @@
+from django.conf.urls import url
+from .views import *
+
+app_name = 'Automation'
+urlpatterns = [
+	url(r'^index', index, name='Automation/index'),
+	url(r'^studenthome', studenthome, name='Automation/studenthome'),
+	url(r'^teacherhome', teacherthome, name='Automation/teacherhome'),
+	url(r'^adminhome', adminhome, name='Automation/adminhome'),
+	url(r'^principalhome', principalhome, name='Automation/principalhome'),
+	url(r'^admissionhome', admissionhome, name='Automation/admissionhome'),
+	url(r'^resultadmin', resultadmin, name='Automation/resultadmin'),
+	url(r'^approveform/(?P<pk>\d+)/$', approveform, name='Automation/approveform'),
+	url(r'^deleteform/(?P<pk>\d+)/$', deleteform, name='Automation/deleteform'),
+	url(r'^applicantlist', applicantlist, name='Automation/applicant_list'),
+	url(r'^login/', user_login, name='Automation/login'),
+	url(r'^logout/', user_logout, name='Automation/logout'),
+	url(r'^studentcreate/(?P<pk>\d+)/$', createstudent, name='Automation/createstudent'),
+	url(r'^addresult/', addresult, name='Automation/addresult'),
+	url(r'^mark/', mark, name='Automation/mark'),
+	url(r'^studentprofile', studentprofile, name='Automation/studentprofile'),
+	url(r'^password/$', change_password, name='Automation/change_password'),
+	# url(r'^image/$', simple_upload, name='Automation/simple_upload'),
+	url(r'^viewresult', view_result, name='Automation/viewresult'),
+	url(r'^classcreate', ClassCreateView.as_view(), name='Automation/classcreate'),
+	url(r'^classlist', ClassListView.as_view(), name='Automation/classlist'),
+	url(r'^examcreate', ExamCreateView.as_view(), name='Automation/examcreate'),
+	url(r'^examlist', ExamListView.as_view(), name='Automation/examlist'),
+	url(r'^sectioncreate', SectionCreateView.as_view(), name='Automation/sectioncreate'),
+	url(r'^sectionlist', SectionListView.as_view(), name='Automation/sectionlist'),
+	url(r'^departmentcreate', DepartmentCreateView.as_view(), name='Automation/departmentcreate'),
+	url(r'^departmentlist', DepartmentListView.as_view(), name='Automation/departmentlist'),
+	url(r'^subjectcreate', SubjectCreateView.as_view(), name='Automation/subjectcreate'),
+	url(r'^subjectlist', SubjectListView.as_view(), name='Automation/subjectlist'),
+	url(r'^teacherlist', TeacherListView.as_view(), name='Automation/teacherlist'),
+	url(r'^admissionofficerlist', AdmissionOfficerListView.as_view(), name='Automation/admissionofficerlist'),
+	url(r'^admissionofficercreate', createadmissionofficer, name='Automation/createadmissionofficer'),
+	url(r'^teachercreate', createteacher, name='Automation/createteacher'),
+	url(r'^teacherprofile', teacherprofile, name='Automation/teacherprofile'),
+	url(r'^passwordsuccess', passwordsuccess, name='Automation/passwordsuccess'),
+	url(r'^admissionofficerprofile', admissionofficerprofile, name='Automation/admissionofficerprofile'),
+
+]

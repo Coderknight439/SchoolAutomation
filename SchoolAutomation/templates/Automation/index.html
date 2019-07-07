@@ -1,0 +1,28 @@
+
+{% extends "Automation/base.html" %}
+{% block content %}
+<div class="wrapper">
+   	<nav id="sidebar">
+   		<div class="sidebar-header">
+   			<h3>Milestone School</h3>
+   		</div>
+   		<ul class="list components">
+			<li><a href="{% url 'Home/index' %}"><span> <i class="fa fa-home"></i></span> Home</a> </li>
+   			<li><a href="{% url 'Automation:Automation/login' %}"><span> <i class="fa fa-user"></i></span>  Admin </a> </li>
+   			<li><a href="{% url 'Automation:Automation/login' %}"><span><i class="fa fa-user"></i></span>  Principal</a> </li>
+            <li><a href="{% url 'Automation:Automation/login' %}"><span><i class="fa fa-user"></i></span>  Teacher</a> </li>
+            <li><a href="{% url 'Automation:Automation/login' %}"><span><i class="fa fa-user"></i></span>  Student</a> </li>
+            <li><a href="{% url 'Automation:Automation/login' %}"><span><i class="fa fa-user"></i></span>  Admission Officer<a></li>
+            <li><a href="{% url 'Automation:Automation/login' %}"><span><i class="fa fa-user"></i></span>   Result Admin </a></li>
+   		</ul>
+   	</nav>
+   	<div class="content">
+   		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+   		<button type="button" id="sidebarCollapse" class="btn btn-info">
+   			<i class="fa fa-align-justify"></i> <span></span></button>
+  <!--<a class="navbar-brand" href="#">Navbar</a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+</nav>
+   </div>
+</div>
+{% endblock %}

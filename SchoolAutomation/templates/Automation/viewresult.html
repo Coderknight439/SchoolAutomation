@@ -1,0 +1,28 @@
+{% extends 'Automation/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container" align="center" style="margin-top:185px;">
+<form method="POST">{% csrf_token %}
+    <table border="1px">
+        <tr>
+            <td><label>Exam Type:</label></td>
+            <td><select name="examid">
+                {% for exam in test %}
+                <option value="{{ exam.id }}">{{ exam.exam_type }}</option>
+                 {% endfor %}
+            </select></td>
+        </tr>
+        <tr>
+            <td><label>Year:</label></td>
+            <td><select name="year">
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2017">2016</option>
+            </select></td>
+        </tr>
+    </table>
+    <button type="submit" class="approve1" style="margin-top:10px">Show</button>  <a href="{% url 'Automation:Automation/studenthome' %}" class="approve1" style="margin-top:10px; ">Back</a>
+</form>
+    </div>
+{% endblock %}

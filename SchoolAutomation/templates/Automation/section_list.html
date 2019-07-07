@@ -1,0 +1,23 @@
+{% extends 'Automation/base.html' %}
+{% block content %}
+
+<div class="container-fluid" align="center" style="height:100%">
+    <table border="1px" class="table table-hover">
+         <tr>
+       <td align="center"><label><u>ID</u></label></td>
+       <td align="center"><label><u>Name</u></label></td>
+   </tr>
+        {% for instance in object_list %}
+        <tr>
+        <td>{{ instance.id }}</td>
+        <td><a href="{{ instance.get_absolute_url }}">{{ instance.secname }}</a></td>
+         </tr>
+        {% endfor %}
+          <tr>
+        <td  align="center"> <a href="{% url 'Automation:Automation/adminhome' %}" class="btn btn-default approve1">Back</a></td>
+         <td  align="center"> <a href="{% url 'Automation:Automation/sectioncreate' %}" class="btn btn-default approve1"><span><i class="fa fa-plus"></i></span>ADD</a></td>
+    </tr>
+</table>
+</div>
+
+{% endblock %}

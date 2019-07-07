@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="{% static 'css/studentprofile.css' %}">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>My Profile</title>
+</head>
+<body>
+<div class="container emp-profile">
+          <!--  <form method="post" action="#" enctype="multipart/form-data" > {% csrf_token %} -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="{{ test.image.url }}" alt=""/>
+                            <div class="file btn btn-lg btn-primary">
+                                Change Photo
+                                <input type="file" name="image"/>
+                            </div>
+
+                        </div>
+                          <button type="submit" style="margin-left:116px;">Upload</button>
+                    </div>
+
+
+    <!-- {% if uploaded_file_url %}
+    <p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+  {% endif %} -->
+                    <div class="col-md-6">
+                        <div class="profile-head">
+                                    <h5>
+                                        {{teacher.first_name}} {{teacher.last_name}}
+                                    </h5>
+                                    <h6>
+                                        Milestone School
+                                    </h6>
+                                    <p class="proile-rating">Joining Date : <span>{{ user.date_joined }}</span></p>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                       <li class="nav-item"> <a href="{% url 'Automation:Automation/admissionhome' %}" style="text-decoration:none;">Home</a></li>
+                        <li class="nav-item"><a href="{% url 'Automation:Automation/change_password' %}" style="text-decoration:none;">Change Password</a></li>
+                            </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work">
+                            <p>Milestone Club</p>
+                            <a href="">Milestone Photographic Club</a><br/>
+                            <a href="">Milestone Debating Forum</a><br/>
+                            <a href="">Milestone BNCC</a>
+                            <p>Important Links</p>
+                            <a href="">10 Minute School</a><br/>
+                            <a href="">Online Sohopathi</a><br/>
+                            <a href="">Dhaka Education Board</a><br/>
+                            <a href="">Khan Academy</a><br/>
+                            <a href="">Youtube</a><br/>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Name</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{teacher.first_name}} {{teacher.last_name}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{teacher.email}}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Phone</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{teacher.phone_no }}</p>
+                                            </div>
+                                        </div>
+
+
+                                 <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Address</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>{{teacher.address}}</p>
+                                            </div>
+                                        </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+ <!-- </form> -->
+        </div>
+</body>
+</html>

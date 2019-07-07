@@ -1,0 +1,24 @@
+{% extends 'Automation/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container" align="center" style="margin-top:185px;">
+<form method="POST">{% csrf_token %}
+    <table>
+        <tr>
+            <td><label>UserID:</label></td>
+            <td><input type="text" name="UserID" value="{{ UserID }}"></td>
+        </tr>
+        <tr>
+            <td><label>Section:</label></td>
+            <td><select name="section">
+                {% for sec in sec %}
+                <option value=" {{ sec.secname }} ">{{ sec.secname }}</option>
+                {% endfor %}
+            </select></td>
+        </tr>
+    </table>
+    <button type="submit" class="approve1">Add</button>
+    <a href="{% url 'Automation:Automation/applicant_list' %}" class="approve1" style="margin-top:10px; ">Back</a>
+</form>
+    </div>
+{% endblock %}

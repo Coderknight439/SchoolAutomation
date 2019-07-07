@@ -1,0 +1,29 @@
+{% extends 'Automation/base.html' %}
+{% block content %}
+
+<div class="container-fluid" align="center" style="height:100%">
+    <table border="1px" class="table table-hover">
+         <tr>
+       <td align="center"><label><u><strong>First Name</strong></u></label></td>
+             <td align="center"><label><u><strong>Last Name</strong></u></label></td>
+             <td align="center"><label><u><strong>Phone No.</strong></u></label></td>
+             <td align="center"><label><u><strong>Email</strong></u></label></td>
+             <td align="center"><label><u><strong>Address</strong></u></label></td>
+   </tr>
+        {% for instance in object_list %}
+        <tr>
+        <td align="center">{{ instance.first_name }}</td>
+        <td align="center"><a href="#">{{ instance.last_name }}</a></td>
+            <td align="center"><a href="#">{{ instance.phone_no }}</a></td>
+            <td align="center"><a href="#">{{ instance.email }}</a></td>
+            <td align="center"><a href="#">{{ instance.address }}</a></td>
+         </tr>
+        {% endfor %}
+          <tr>
+        <td  align="center" colspan="2"> <a href="{% url 'Automation:Automation/adminhome' %}" class="btn btn-default approve1">Back</a></td>
+         <td  align="center" colspan="3"> <a href="{% url 'Automation:Automation/createadmissionofficer' %}" class="btn btn-default approve1"><span><i class="fa fa-plus"></i></span>ADD</a></td>
+    </tr>
+</table>
+</div>
+
+{% endblock %}

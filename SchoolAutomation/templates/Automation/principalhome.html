@@ -1,0 +1,70 @@
+{% extends "Automation/base.html" %}
+{% block content %}
+   <div class="wrapper">
+   	<nav id="sidebar">
+   		<div class="sidebar-header">
+   			<h3>Milestone School & College</h3>
+			{% include 'Automation/loginpartial.html' %}
+   		</div>
+   		<ul class="list-unstyled components">
+   			<li><a href="#"><span><i class="fa fa-user"></i></span>  Profile</a></li>
+   			<li><a href="{% url 'Automation:Automation/principalhome' %}"><span><i class="fa fa-wpforms"></i></span>  Admission Form</a></li>
+        <li><a href="{% url 'Automation:Automation/logout' %}"><span><i class="fa fa-sign-out"></i></span>  logout</a></li>
+   		</ul>
+
+   		<ul class="list-unstyled CTAs">
+
+   		</ul>
+   	</nav>
+
+   	<div class="content">
+   		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+   		<button type="button" id="sidebarCollapse" class="btn btn-info">
+   			<i class="fa fa-align-justify"></i> <span></span>
+   		</button>
+
+  <!--<a class="navbar-brand" href="#">Navbar</a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+</nav>
+
+    <div class="line"></div>
+
+    </div>
+       <div class="container">
+           <row>
+		   <div class="applicant">
+               <h3>
+			   Applicant of Academic Session-{{year}}
+		   </h3>
+			   <hr/>
+		   </div>
+               <column small="6" large="6">
+		   {% for form in test %}
+		   <table>
+
+<tr>
+			<b>{{forloop.counter}}.</b> <a href="{% url 'Automation:Automation/approveform' pk=form.pk %}">{{form.first_name}}</a>
+                <hr/>
+	</tr>
+
+			   </table>
+		   {% endfor %}
+               </column>
+
+                 </row>
+	   </div>
+	   <div>
+		   {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }} </li>
+    {% endfor %}
+</ul>
+{% endif %}
+   </div>
+   </div>
+{% endblock %}

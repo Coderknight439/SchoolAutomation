@@ -1,0 +1,27 @@
+{% extends 'Automation/base.html' %}
+{% block content %}
+<div class="container-fluid" align="center" style="height:100%">
+    <h3>Result of Class {{ Class }}, Section-{{ section }}, Subject-{{subject}}, year-{{year}}</h3>
+<form method="POST" action="{% url 'Automation:Automation/mark' %}">{% csrf_token %}
+     <table border="1px">
+
+   <tr>
+       <td><label>UserID</label></td>
+       <td><label>Mark:</label></td>
+   </tr>
+         {% for student in student %}
+         <tr>
+            <td><input type="text" name="studentid{{forloop.counter}}" value="{{ student.UserID }}"></td>
+             <td><input type="text" name="mark{{forloop.counter}}"></td>
+         </tr>
+
+    {% endfor %}
+         <tr>
+             <td align="center"><button type="submit" class="approve1">Submit</button></td>
+             <td align="center"> <a href="{% url 'Automation:Automation/addresult' %}" class="btn btn-default approve1">Back</a></td>
+         </tr>
+            </table>
+
+</form>
+</div>
+{% endblock %}

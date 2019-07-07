@@ -1,0 +1,4 @@
+{% if user.is_authenticated %}
+        <p><span class="navbar-brand" style="color:red">Welcome</span></p>
+<h5 style="color:yellow;">{{ user.username }}!</h5>
+{% endif %}

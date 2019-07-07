@@ -1,0 +1,42 @@
+{% extends 'Automation/base.html' %}
+{% block content %}
+<div class="wrapper">
+   	<nav id="sidebar">
+   		<div class="sidebar-header">
+   			<h3>Milestone School & College</h3>
+			{% include 'Automation/loginpartial.html' %}
+   		</div>
+   		<ul class="list-unstyled components">
+   			<li><a href="{% url 'Automation/resultadminprofile' %}"><span><i class="fa fa-user"></i></span>  Profile</a></li>
+   			<li>
+   				<a href="{% url 'Automation:Automation/addresult' %}">Add Result</a>
+
+   			</li>
+        <li><a href="{% url 'Automation:Automation/logout' %}"><span><i class="fa fa-sign-out"></i></span>  logout</a></li>
+   		</ul>
+
+   		<ul class="list-unstyled CTAs">
+
+   		</ul>
+   	</nav>
+
+   	<div class="content">
+   		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+   		<button type="button" id="sidebarCollapse" class="btn btn-info">
+   			<i class="fa fa-align-justify"></i> <span></span>
+   		</button>
+
+  <!--<a class="navbar-brand" href="#">Navbar</a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+</nav>
+
+    <div class="line"></div>
+
+    </div>
+
+   </div>
+    {% endblock %}

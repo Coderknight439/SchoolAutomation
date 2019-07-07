@@ -1,0 +1,52 @@
+{% extends 'Automation/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container" align="center" style="margin-top:185px;">
+       <div>
+		   {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }} </li>
+    {% endfor %}
+</ul>
+{% endif %}
+   </div>
+<form method="POST">{% csrf_token %}
+    <table border="1px">
+        <tr>
+            <td><label>Class:</label></td>
+            <td><select name="Class">
+                {% for Class in Class %}
+                <option value="{{ Class.classname }}">{{ Class.classname }}</option>
+                {% endfor %}
+            </select></td>
+        </tr>
+        <tr>
+            <td><label>Section:</label></td>
+            <td><select name="section">
+                {% for sec in sec %}
+                <option value="{{ sec.secname }}">{{ sec.secname }}</option>
+                {% endfor %}
+            </select></td>
+        </tr>
+        <tr>
+            <td><label>Exam Type:</label></td>
+            <td><select name="exam">
+                {% for exam in exam %}
+                <option value="{{ exam.id }}">{{exam.exam_type}}</option>
+                {% endfor %}
+            </select></td>
+        </tr>
+        <tr>
+            <td><label>Subject:</label></td>
+            <td><select name="subject">
+                {% for subject in subject %}
+                <option value="{{ subject.subcode }}">{{ subject.name }}</option>
+               {% endfor %}
+            </select></td>
+        </tr>
+    </table>
+    <button type="submit" class="approve1" style="margin-top:10px">Next</button>  <a href="{% url 'Automation:Automation/resultadmin' %}" class="approve1" style="margin-top:10px; ">Back</a>
+</form>
+    </div>
+{% endblock %}

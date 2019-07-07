@@ -1,0 +1,47 @@
+{% extends "Automation/base.html" %}
+{% block content %}
+<div class="wrapper">
+   	<nav id="sidebar">
+   		<div class="sidebar-header">
+   			<h3>Milestone School & College</h3>
+			{% include 'Automation/loginpartial.html' %}
+   		</div>
+   		<ul class="list-unstyled components">
+   			<li><a href="{% url 'Home/admin' %}"><span><i class="fa fa-home"></i></span> Admin Site</a></li>
+   			<li><a href="{% url 'Automation:Automation/classlist' %}"><span><i class="fa fa-home"></i></span> Class</a></li>
+            <li><a href="{% url 'Automation:Automation/sectionlist' %}"><span><i class="fa fa-home"></i></span> Section</a></li>
+            <li><a href="{% url 'Automation:Automation/subjectlist' %}"><span><i class="fa fa-home"></i></span> Subject</a></li>
+            <li><a href="{% url 'Automation:Automation/examlist' %}"><span><i class="fa fa-home"></i></span> Exam</a></li>
+            <li><a href="{% url 'Automation:Automation/departmentlist' %}"><span><i class="fa fa-home"></i></span> Department</a></li>
+            <li><a href="{% url 'Automation:Automation/teacherlist' %}"><span><i class="fa fa-home"></i></span> Teacher</a></li>
+			<li><a href="{% url 'Automation/resultadminlist' %}"><span><i class="fa fa-home"></i></span> Result Admin</a></li>
+            <li><a href="{% url 'Automation:Automation/admissionofficerlist' %}"><span><i class="fa fa-home"></i></span> Admission Officer</a></li>
+        <li><a href="{% url 'Automation:Automation/logout' %}"><span><i class="fa fa-sign-out"></i></span>  logout</a></li>
+   		</ul>
+
+   		<ul class="list-unstyled CTAs">
+
+   		</ul>
+   	</nav>
+
+   	<div class="content">
+   		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+   		<button type="button" id="sidebarCollapse" class="btn btn-info">
+   			<i class="fa fa-align-justify"></i> <span></span>
+   		</button>
+
+  <!--<a class="navbar-brand" href="#">Navbar</a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+</nav>
+
+    <div class="line"></div>
+
+    </div>
+
+   </div>
+
+{% endblock %}

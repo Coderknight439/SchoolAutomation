@@ -1,0 +1,23 @@
+{% extends "Automation/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container fluid">
+     <h3 align="center" style="border-bottom: 2px solid blue">Application Form</h3>
+    <form method="POST" class="post-form">{% csrf_token %}
+        <div align="center" width="600px">
+            <table class="table-bordered" width="600px">
+            {{form.as_table}}
+                </table>
+        </div>
+
+        <br>
+        <div align="center">
+            <button type="submit" class="save btn btn-default button approve1" style="margin-right:25px">Approve</button>
+            <a class="save btn btn-default button approve1" href="{% url 'Automation:Automation/principalhome' %}" style="margin-right:25px">Back</a>
+           <a class="btn btn-default button approve1" href="{% url 'Automation:Automation/deleteform' pk=test.pk %}" style="margin-left:25px">Delete</a>
+        </div>
+    </form>
+ </div>
+{% endblock %}

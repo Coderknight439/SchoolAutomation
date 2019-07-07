@@ -1,0 +1,12 @@
+{% extends 'Automation/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container" align="center" style="margin-top:185px;">
+<form method="POST">{% csrf_token %}
+    <table border="1px">
+{{form.as_table}}
+    </table>
+    <button type="submit" class="approve1" style="margin-top:10px">Add</button>  <a href="{% url 'Automation:Automation/classlist' %}" class="approve1" style="margin-top:10px; ">Back</a>
+</form>
+    </div>
+{% endblock %}

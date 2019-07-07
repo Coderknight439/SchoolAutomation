@@ -1,0 +1,32 @@
+{% extends 'Automation/base.html' %}
+{% block content %}
+<div class="container-fluid" align="center" style="height:100%">
+     <h3>Result of {{exam.exam_type}} year-{{year}}</h3>
+<table border="1px" class="table table-hover">
+
+   <tr>
+       <td align="center"><label><u>Subject ID</u></label></td>
+       <td align="center"><label><u>Mark</u></label></td>
+       <td align="center"><label><u>Grade</u></label></td>
+   </tr>
+         {% for result in result %}
+         <tr>
+            <td align="center">{{ result.subjectid }}</td>
+             <td align="center">{{ result.mark }}</td>
+             {% if result.mark|add:0 >= 80 and result.mark|add:0 <= 100 %}
+             <td align="center">A+</td>
+             {% elif result.mark|add:0 >= 70 and result.mark|add:0 <= 79 %}
+             <td align="center">A</td>
+             {% elif result.mark|add:0 >= 60 and result.mark|add:0 <= 69 %}
+             <td align="center">A-</td>
+             {% else %}
+             <td align="center">B</td>
+             {% endif %}
+         </tr>
+    {% endfor %}
+    <tr>
+        <td colspan="3" align="center"> <a href="{% url 'Automation:Automation/viewresult' %}" class="btn btn-default approve1">Back</a></td>
+    </tr>
+</table>
+</div>
+{% endblock %}

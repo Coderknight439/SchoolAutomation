@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+      <link rel="stylesheet" href="{% static 'css/automationhome.css' %}">
+    <title>Admission Home</title>
+  </head>
+
+  <body>
+   <header>
+   	<div ><h1 align="center">Milestone Automation</h1>
+    </div>
+   </header>
+   <div>
+		   {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }} </li>
+    {% endfor %}
+</ul>
+{% endif %}
+   </div>
+    <div class="container">
+           <row>
+		   <div class="applicant">
+               <h3>
+			   Applicant of Academic Session-{{year}}
+		   </h3>
+			   <hr/>
+		   </div>
+               <column small="6" large="6">
+		   {% for form in test %}
+		   <table>
+
+<tr>
+			<b>{{forloop.counter}}.</b> <a href="#">{{form.first_name}}</a> <a class="btn btn-default add-std" href="{% url 'Automation:Automation/createstudent' pk=form.pk %}" >Add to Student</a>
+                <hr/>
+	</tr>
+
+			   </table>
+		   {% endfor %}
+               </column>
+
+                 </row>
+        <a href="{% url 'Automation:Automation/admissionhome' %}" class="btn btn-default approve1">Back</a>
+	   </div>
+
+<footer>
+            <p>&copy; {{ year }} - Milestone Automation</p>
+</footer>
+  </body>
+</html>
